@@ -1,0 +1,10 @@
+D:\Hang Ze Wu\tool\data source\training project\DBreader\OnlineImageRecognition\obj\Debug\OnlineImageRecognition.csprojAssemblyReference.cache
+D:\Hang Ze Wu\tool\data source\training project\DBreader\OnlineImageRecognition\obj\Debug\OnlineImageRecognition.Form1.resources
+D:\Hang Ze Wu\tool\data source\training project\DBreader\OnlineImageRecognition\obj\Debug\OnlineImageRecognition.Properties.Resources.resources
+D:\Hang Ze Wu\tool\data source\training project\DBreader\OnlineImageRecognition\obj\Debug\OnlineImageRecognition.csproj.GenerateResource.cache
+D:\Hang Ze Wu\tool\data source\training project\DBreader\OnlineImageRecognition\obj\Debug\OnlineImageRecognition.csproj.CoreCompileInputs.cache
+D:\Hang Ze Wu\tool\data source\training project\DBreader\OnlineImageRecognition\bin\Debug\OnlineImageRecognition.exe.config
+D:\Hang Ze Wu\tool\data source\training project\DBreader\OnlineImageRecognition\bin\Debug\OnlineImageRecognition.exe
+D:\Hang Ze Wu\tool\data source\training project\DBreader\OnlineImageRecognition\bin\Debug\OnlineImageRecognition.pdb
+D:\Hang Ze Wu\tool\data source\training project\DBreader\OnlineImageRecognition\obj\Debug\OnlineImageRecognition.exe
+D:\Hang Ze Wu\tool\data source\training project\DBreader\OnlineImageRecognition\obj\Debug\OnlineImageRecognition.pdb
