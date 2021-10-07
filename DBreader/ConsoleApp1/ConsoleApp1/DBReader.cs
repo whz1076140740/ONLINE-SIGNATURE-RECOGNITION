@@ -4,8 +4,8 @@ using System.IO;
 namespace ConsoleApp1
 {
     //this class responsible for read x,y point  into buffer
-        //and support two int arraies to access x,y
-    public class DBReader
+    //and support two int arraies to access x,y
+    public class DBReader : DBread
     {
         //read from defined DB location
         private const string FileName = "Text.txt";
@@ -42,8 +42,8 @@ namespace ConsoleApp1
             //check the null Filename
             if (!File.Exists(FileName))
             {
-                Console.WriteLine("{0} not exist",FileName); 
-                return ;
+                Console.WriteLine("{0} not exist", FileName);
+                return;
             }
             using (StreamReader fs = File.OpenText(FileName))
             {
@@ -51,7 +51,7 @@ namespace ConsoleApp1
                 int PointCount = 0;
                 string inputLine;
                 //read every point's (x,y) untile the end of file
-                while ((inputLine = fs.ReadLine())!=null)
+                while ((inputLine = fs.ReadLine()) != null)
                 {
                     string[] input = inputLine.Split(' ');
                     imageBufferX[PointCount] = int.Parse(input[0]);
@@ -65,7 +65,7 @@ namespace ConsoleApp1
         public void FlushBuffer()
         {
             int i = 0;
-            while (i!=400)
+            while (i != 400)
             {
                 imageBufferX[i] = -1;
                 imageBufferY[i] = -1;
