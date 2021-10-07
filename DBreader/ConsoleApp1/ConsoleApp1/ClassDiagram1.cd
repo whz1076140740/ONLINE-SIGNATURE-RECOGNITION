@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ConsoleApp1.DBReader">
-    <Position X="1.75" Y="1.25" Width="1.5" />
+    <Position X="1.75" Y="2.75" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
@@ -9,6 +9,14 @@
       <HashCode>AAAAAQCAAAAAAAAAAAAAAAAiAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>DBReader.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
+  <Interface Name="ConsoleApp1.DBread">
+    <Position X="1.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DBread.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Microsoft YaHei UI" Size="9" />
 </ClassDiagram>
