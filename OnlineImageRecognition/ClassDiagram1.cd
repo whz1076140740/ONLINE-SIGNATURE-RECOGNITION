@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Left is data access layer&#xD;&#xA;Right is Bussiness layer&#xD;&#xA;">
+    <Position X="6.938" Y="1.604" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="The DAL have a READER and a SERVICE component">
+    <Position X="2.396" Y="0.5" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="SERVICE takes img float array and scale to entity and support a interface to access">
+    <Position X="2.427" Y="1.396" Height="0.75" Width="1.7" />
+  </Comment>
+  <Class Name="OnlineImageRecognition.DBReader">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQCAAAAAACAAAEAAAAAiAAAAAAAAAAAAAABAAQA=</HashCode>
+      <FileName>DBReader.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OnlineImageRecognition.BussinessEntity">
+    <Position X="9.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAAAAAAAAAAAAAAAAAIAABgAAAQAAA=</HashCode>
+      <FileName>BussinessEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineImageRecognition.PConverter">
+    <Position X="2.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEIAAAAAAAAgAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>DataAccessComponents.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OnlineImageRecognition.DataAccessComp">
+    <Position X="4.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAABAAAAABAAA=</HashCode>
+      <FileName>DataAccessComp.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="OnlineImageRecognition.DBread">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAgAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>DBread.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OnlineImageRecognition.PointConverter">
+    <Position X="2.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DBaccess.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OnlineImageRecognition.DBservice">
+    <Position X="4.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>DBservice.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
