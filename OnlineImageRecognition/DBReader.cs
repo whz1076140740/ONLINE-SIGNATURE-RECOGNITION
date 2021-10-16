@@ -63,7 +63,7 @@ namespace OnlineImageRecognition
         {
 
          //test path
-            FileName = @"././././Task2/U5S23.txt";
+            FileName = @"././././Task2/U1S11.txt";
             //check the null Filename
             if (!File.Exists(FileName))
             {
