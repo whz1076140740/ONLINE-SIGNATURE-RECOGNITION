@@ -8,3 +8,4 @@ D:\Hang Ze Wu\tool\data source\training project\DBreader\OnlineImageRecognition\
 D:\Hang Ze Wu\tool\data source\training project\DBreader\OnlineImageRecognition\bin\Debug\OnlineImageRecognition.pdb
 D:\Hang Ze Wu\tool\data source\training project\DBreader\OnlineImageRecognition\obj\Debug\OnlineImageRecognition.exe
 D:\Hang Ze Wu\tool\data source\training project\DBreader\OnlineImageRecognition\obj\Debug\OnlineImageRecognition.pdb
+D:\Hang Ze Wu\tool\data source\training project\DBreader\OnlineImageRecognition\obj\Debug\OnlineImageRecognition.DrawWindow.resources

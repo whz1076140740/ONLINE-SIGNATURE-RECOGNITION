@@ -7,6 +7,6 @@ namespace OnlineImageRecognition
 {
     public interface DBservice
     {
-        float[,] AccessEntity();
+        float[,] AccessEntity(String Fname);
     }
 }

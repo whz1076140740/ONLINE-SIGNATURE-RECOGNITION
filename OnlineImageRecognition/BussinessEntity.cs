@@ -9,14 +9,19 @@ namespace OnlineImageRecognition
     {
         private DBservice DBacess;
         private float[,] points;
-        private float[] x;
-        private float[] y;
-
-        public BussinessEntity()
+        private float[] Flx;
+        private float[] Fly;
+        private int[] Intx;
+        private int[] Inty;
+        private String Fname;
+        public BussinessEntity(String Fname)
         {
+            this.Fname = Fname;
             DBacess = new DataAccessComp();
-            points = DBacess.AccessEntity();
+            points = DBacess.AccessEntity(Fname);
+            
             ToFloatArray();
+            ToIntArray();
         }
 
         //properties to get points from buffer
@@ -25,7 +30,7 @@ namespace OnlineImageRecognition
             set { }
             get
             {
-                return x;
+                return Flx;
             }
         }
         public float[] PointY
@@ -33,20 +38,44 @@ namespace OnlineImageRecognition
             set { }
             get
             {
-                return y;
+                return Fly;
+            }
+        }
+
+        public int[] PointX_Int
+        {
+            set { }
+            get
+            {
+                return Intx;
+            }
+        }
+        public int[] PointY_Int
+        {
+            set { }
+            get
+            {
+                return Inty;
             }
         }
         //for UI print:convert the float[,] entity to float[] x,y entity type 
         public void ToFloatArray()
         {
             int length= points.Length / 2;
-            x = new float[length];
-            y = new float[length];
+            Flx = new float[length];
+            Fly = new float[length];
             for (int i = 0; i < length; i++)
             {
-                x[i] = points[i, 0];
-                y[i] = points[i, 1];
+                Flx[i] = points[i, 0];
+                Fly[i] = points[i, 1];
             }
+        }
+        public void ToIntArray()
+        {
+            DBReader intRead = new DBReader();
+            intRead.Read( Fname);
+            Intx=intRead.pointX;
+            Inty=intRead.pointY;
         }
     }
 }

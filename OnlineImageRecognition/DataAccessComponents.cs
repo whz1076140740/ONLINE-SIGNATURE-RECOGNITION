@@ -14,25 +14,37 @@ namespace OnlineImageRecognition
     public class PConverter : PointConverter
     {
         //the draw window size
-         const float xSize= (float)300;
-         const float ySize= (float)300;
+         const float xSize= (float)70;
+         const float ySize= (float)70;
 
 
         //convert the received DB point to window's scale's form
         public float[,] Convert(float[] x, float[] y)
         {
-            float[,] converter = new float[x.Length, 2];
+            float[,] converter = scale(x, y);
 
-            float[,] MinMax = Two_DMinMax(x,y);
             for (int i = 0; i < x.Length; i++)
             { 
-                   float[,] Normal = Normalize(new float[1, 2] { { x[i], y[i] } },MinMax);
-                converter[i, 0] = xSize * Normal[0, 0];
-                converter[i, 1] = ySize * Normal[0, 1];
+                converter[i, 0] *= xSize ;
+                converter[i, 1] *= ySize ;
             }
             return converter;
         }
 
+        public float[,] scale(float[] x, float[] y)
+        {
+            float[,] scaled = new float[x.Length, 2];
+
+            float[,] MinMax = Two_DMinMax(x, y);
+
+            for (int i = 0; i < x.Length; i++)
+            {
+                float[,] Normal = Normalize(new float[1, 2] { { x[i], y[i] } }, MinMax);
+                scaled[i, 0] = Normal[0, 0];
+                scaled[i, 1] = Normal[0, 1];
+            }
+            return scaled;
+        }
         //normalize the point for scalling points to the window
             //Formula: NormalX = (x-MinX)/(MaxX-MinX)
         public float[,] Normalize(float[,] p,float[,] MinMax)
@@ -69,14 +81,14 @@ namespace OnlineImageRecognition
 
 
         //Calculate the bias derivate of a (x,y)
-        //useless!!! But is one of my mistake of creation ！！！
-        public float[,] XYbiasDerivative(float[,] p)
+        //useless!!! is one of my mistake of creation ！！！
+       /* public float[,] XYbiasDerivative(float[,] p)
         {
             float[,] BiasDer = new float[1, 2];
             float unit = (float)Math.Sqrt((p[0, 0] * p[0, 0]) + (p[0, 1] * p[0, 1]));
             BiasDer[0, 0] = p[0, 0] / unit;
             BiasDer[0, 1] = p[0, 1] / unit;
             return BiasDer;
-        }
+        }*/
     }
 }

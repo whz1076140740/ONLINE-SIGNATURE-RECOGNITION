@@ -8,8 +8,11 @@ namespace OnlineImageRecognition
     //and support two int arraies to access x,y
     public class DBReader : DBread
     {
+        //default path is reader can not find a reading path
+        const string DEFAULTPATH = @"Text.txt";
+
         //read from defined DB location
-        private  string FileName = @"Text.txt";
+        private  string FileName= DEFAULTPATH;
         //point buffer
         private int[] imageBufferX;
         private int[] imageBufferY;
@@ -37,7 +40,6 @@ namespace OnlineImageRecognition
         {
             FlushBuffer();
         }
-
         //access x point float array by dataComponent
         public float[] ReadX() {
             float[] px = new float[imageBufferX.Length];
@@ -59,11 +61,11 @@ namespace OnlineImageRecognition
         }
 
         //read the image into image buffer
-        public void Read()
+        public void Read(String Fname)
         {
 
          //test path
-            FileName = @"././././Task2/U1S11.txt";
+            FileName = Fname;
             //check the null Filename
             if (!File.Exists(FileName))
             {
@@ -72,6 +74,8 @@ namespace OnlineImageRecognition
             }
             using (StreamReader fs = File.OpenText(FileName))
             {
+
+                Console.WriteLine(FileName+"Read success!");
                 length = int.Parse(fs.ReadLine());
                 imageBufferX = new int[length];
                 imageBufferY = new int[length];

@@ -5,10 +5,7 @@ using System.Text;
 
 namespace OnlineImageRecognition
 {
-    public interface DBread
-    {
-        void Read(String Fname);
-        float[] ReadX();
-        float[] ReadY();
+    public class BWF_Cal_DTW
+    { 
     }
 }

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Comment CommentText="Left is data access layer&#xD;&#xA;Right is Bussiness layer&#xD;&#xA;">
-    <Position X="6.938" Y="1.604" Height="0.75" Width="1.7" />
+    <Position X="6.405" Y="1.629" Height="0.75" Width="1.7" />
   </Comment>
   <Comment CommentText="The DAL have a READER and a SERVICE component">
     <Position X="2.396" Y="0.5" Height="0.75" Width="1.7" />
@@ -10,27 +10,30 @@
     <Position X="2.427" Y="1.396" Height="0.75" Width="1.7" />
   </Comment>
   <Comment CommentText="Function Classes, not in design requeirment but may have test function">
-    <Position X="6.979" Y="4.333" Height="0.75" Width="1.7" />
+    <Position X="6.421" Y="4.283" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Left is Entity: data storage&#xD;&#xA;&#xD;&#xA;Right is Components:&#xD;&#xA;Basic function components">
+    <Position X="10.619" Y="1.284" Height="1.636" Width="1.094" />
   </Comment>
   <Class Name="OnlineImageRecognition.DBReader">
     <Position X="0.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAQCAAAAAACAAAEAAAAAiAAAAAAAAAAAAAABAAQA=</HashCode>
+      <HashCode>AAAAAQCAAAACACAAAEAAAAAiAAAAAAAAAAAAAABAAQA=</HashCode>
       <FileName>DBReader.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="OnlineImageRecognition.BussinessEntity">
-    <Position X="9.25" Y="1.25" Width="1.5" />
+    <Position X="8.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAgAAAAAAAAAAAAAAAAAAIAABgAAAQAAA=</HashCode>
+      <HashCode>AAAAIACAAAAAgAEAAAAAAAAAAAAAAAAIAAAxAAAQEAA=</HashCode>
       <FileName>BussinessEntity.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OnlineImageRecognition.PConverter">
     <Position X="2.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAEIAAAAAIAAgAAAAEAAAABAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAEIAAAAACAAgAAAAEAAAABAAAAAA=</HashCode>
       <FileName>DataAccessComponents.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -44,10 +47,52 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="OnlineImageRecognition.Sorter">
-    <Position X="7" Y="5.25" Width="1.5" />
+    <Position X="6.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAAIAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
       <FileName>Sorter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineImageRecognition.BComp_DTW">
+    <Position X="12.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAUAAACAAQgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>BComp_DTW.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineImageRecognition.BComp_Scale">
+    <Position X="10.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAEAAABAAAAA=</HashCode>
+      <FileName>BComp_Scale.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineImageRecognition.BComp_Shift">
+    <Position X="10.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAEAAwAAAQAAQAAAAAAA=</HashCode>
+      <FileName>BComp_Shift.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineImageRecognition.BussinessEntity_Scaled">
+    <Position X="8.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAAAAAAAAAAABAAAAAAAAABAAAQAAA=</HashCode>
+      <FileName>BussinessEntity_Scaled.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineImageRecognition.BComp_AverageDTW">
+    <Position X="12.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAQAAACAAAAAQgAAAAAAAAAgAAAAAAAAE=</HashCode>
+      <FileName>BComp_AverageDTW.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineImageRecognition.BComp_Authorization">
+    <Position X="14.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAEAgAAAAAAAAAAAAQAAAAAAAAAAQAA=</HashCode>
+      <FileName>BComp_Authorization.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="OnlineImageRecognition.DBread">

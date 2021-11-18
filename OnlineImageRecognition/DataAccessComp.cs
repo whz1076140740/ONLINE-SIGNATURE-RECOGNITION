@@ -16,10 +16,11 @@ namespace OnlineImageRecognition
             Reader = new DBReader();
         }
 
-        public float[,] AccessEntity()
+        public float[,] AccessEntity(String Fname)
         {
-            Reader.Read();
+            Reader.Read(Fname);
             return this.Converter.Convert(Reader.ReadX(),Reader.ReadY());
         }
+        
     }
 }

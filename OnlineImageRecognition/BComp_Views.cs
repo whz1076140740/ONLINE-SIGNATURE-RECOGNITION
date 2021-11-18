@@ -5,10 +5,4 @@ using System.Text;
 
 namespace OnlineImageRecognition
 {
-    public interface DBread
-    {
-        void Read(String Fname);
-        float[] ReadX();
-        float[] ReadY();
-    }
 }
