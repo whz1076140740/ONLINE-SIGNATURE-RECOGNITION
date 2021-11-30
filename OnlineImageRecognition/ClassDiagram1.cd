@@ -15,6 +15,12 @@
   <Comment CommentText="Left is Entity: data storage&#xD;&#xA;&#xD;&#xA;Right is Components:&#xD;&#xA;Basic function components">
     <Position X="10.619" Y="1.284" Height="1.636" Width="1.094" />
   </Comment>
+  <Comment CommentText="ErrorStatisticsCollector:&#xD;&#xA;is a collector that collect &#xD;&#xA;each error of autho calculation;&#xD;&#xA;This will collect: error type of autho(x.erro or y,erro), compared file&amp;referrenced file, and error happened position; ">
+    <Position X="18.767" Y="1.1" Height="1.442" Width="2.204" />
+  </Comment>
+  <Comment CommentText="SystemPerformance:&#xD;&#xA;Aim: for checking the performance index of system authorizartion;&#xD;&#xA;Calculate proportion of correct forged&amp;original autho with total.">
+    <Position X="16.062" Y="0.708" Height="1.442" Width="1.6" />
+  </Comment>
   <Class Name="OnlineImageRecognition.DBReader">
     <Position X="0.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
@@ -84,15 +90,25 @@
   <Class Name="OnlineImageRecognition.BComp_AverageDTW">
     <Position X="12.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAQAAACAAAAAQgAAAAAAAAAgAAAAAAAAE=</HashCode>
+      <HashCode>AAQAAAAAAAAAQAAACAAAAAQgAAAAAAAAAgACAAAAAAE=</HashCode>
       <FileName>BComp_AverageDTW.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OnlineImageRecognition.BComp_Authorization">
     <Position X="14.25" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAABAAEAgAAAAAAAAAAAAQAAAAAAAAAAQAA=</HashCode>
+      <HashCode>AAAAAAAAAAABAAEAgAAAAAAAgAAAAQAAAAAAAAAAQAA=</HashCode>
       <FileName>BComp_Authorization.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineImageRecognition.BComp_SystemPerformance">
+    <Position X="16" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAEAAAAAgAAAAAIAAAAAAAAAACAAACQCA=</HashCode>
+      <FileName>BComp_SystemPerformance.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="OnlineImageRecognition.DBread">

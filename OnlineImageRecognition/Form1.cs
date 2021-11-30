@@ -39,6 +39,19 @@ namespace OnlineImageRecognition
         public Form1()
         {
             InitializeComponent();
+            //initailize User and signature combox
+            for (int i = 1; i <= 40; i++)
+            {
+                User_1_CBox.Items.Add("U" + i);
+                User_2_CBox.Items.Add("U" + i);
+
+                Signature_1_CBox.Items.Add("S" + i);
+                Signature_2_CBox.Items.Add("S" + i);
+
+                PerformanceSelectedUser1_CBox.Items.Add("U" + i);
+                PerformanceSelectedUser2_CBox.Items.Add("U" + i);
+            }
+
             //fx = entity.PointX;
             //fy = entity.PointY;
             //x = entity.PointX_Int;
@@ -159,10 +172,10 @@ namespace OnlineImageRecognition
             {
                 BComp_DTW dtw_Calculator = new BComp_DTW();
                 int[,] DTW = BComp_DTW.DTWDistance(x, y, x_other, y_other);
-               /*float DTWx = dtw_Calculator.float_DTWDistance(fx, fx_other);
-                float DTWy = dtw_Calculator.float_DTWDistance(fy,fy_other);*/
+                /*float DTWx = dtw_Calculator.float_DTWDistance(fx, fx_other);
+                 float DTWy = dtw_Calculator.float_DTWDistance(fy,fy_other);*/
                 DTW_TBox.Clear();
-                DTW_TBox.Text = "(" + DTW[0,0]+ "," + DTW[0, 1] + ")";
+                DTW_TBox.Text = "(" + DTW[0, 0] + "," + DTW[0, 1] + ")";
             }
             else
             {
@@ -201,7 +214,7 @@ namespace OnlineImageRecognition
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DirectoryInfo parentDI = new DirectoryInfo(@"D:\Hang Ze Wu\tool\data source\training project\DBreader\OnlineImageRecognition\bin\Debug\Task2");
+            /*DirectoryInfo parentDI = new DirectoryInfo(@"D:\Hang Ze Wu\tool\data source\training project\DBreader\OnlineImageRecognition\bin\Debug\Task2");
             Signature_LV_1.Items.Clear();
             Signature_LV_2.Items.Clear();
             try
@@ -212,7 +225,7 @@ namespace OnlineImageRecognition
                     Signature_LV_2.Items.Add(fi.Name);
                 }
             }
-            catch { }
+            catch { } */
         }
 
         private void treeView2_AfterSelect(object sender, TreeViewEventArgs e)
@@ -241,43 +254,15 @@ namespace OnlineImageRecognition
         string selected_filename_other;
         private void Signature_LV_1_DoubleClick(object sender, EventArgs e)
         {
-            if (Signature_LV_1.SelectedItems.Count != 1) return;
-            selected_filename = Signature_LV_1.SelectedItems[0].SubItems[0].Text;
-            signature1Label.Text = ":" + selected_filename;
         }
 
         private void Signature_LV_2_DoubleClick(object sender, EventArgs e)
         {
-            if (Signature_LV_2.SelectedItems.Count != 1) return;
-            selected_filename_other = Signature_LV_2.SelectedItems[0].SubItems[0].Text;
-            signature2Label.Text = ":" + selected_filename_other;
         }
 
         //read2 button read from signature2
         private void ReadBt_2_Click(object sender, EventArgs e)
         {
-            if (selected_filename_other == null)
-            {
-                string message = "You should choose first!";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                MessageBox.Show(this, message, "Signature2_read", buttons);
-            }
-            else
-            {
-                entity_other = new BussinessEntity(@"././././Task2/" + selected_filename_other);
-                if (entity_other != null)
-                {
-                    entity_other.ToFloatArray();
-                    fx_other = entity_other.PointX;
-                    fy_other = entity_other.PointY;
-                    x_other = entity_other.PointX_Int;
-                    y_other = entity_other.PointY_Int;
-
-                    string message = "Read '" + selected_filename_other + "' successful!!!";
-                    MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    MessageBox.Show(this, message, "Signature2_read", buttons);
-                }
-            }
         }
 
         private void DrawBt_2_Click(object sender, EventArgs e)
@@ -303,16 +288,10 @@ namespace OnlineImageRecognition
         //select .txt for read
         private void Signature_LV_1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Signature_LV_1.SelectedItems.Count != 1) return;
-            selected_filename = Signature_LV_1.SelectedItems[0].SubItems[0].Text;
-            signature1Label.Text = ":" + selected_filename;
         }
 
         private void Signature_LV_2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Signature_LV_2.SelectedItems.Count != 1) return;
-            selected_filename_other = Signature_LV_2.SelectedItems[0].SubItems[0].Text;
-            signature2Label.Text = ":" + selected_filename_other;
         }
 
         //shift
@@ -373,8 +352,8 @@ namespace OnlineImageRecognition
             {
                 BComp_DTW dtw_Calculator = new BComp_DTW();
                 //int[,] DTW = dtw_Calculator.DTWDistance(x, y, x_other, y_other);
-                float DTWx = dtw_Calculator.float_DTWDistance(scalling.PointX,scalling_Other.PointX);
-                float DTWy = dtw_Calculator.float_DTWDistance(scalling.PointY,scalling_Other.PointY);
+                float DTWx = dtw_Calculator.float_DTWDistance(scalling.PointX, scalling_Other.PointX);
+                float DTWy = dtw_Calculator.float_DTWDistance(scalling.PointY, scalling_Other.PointY);
                 newDTW_TextBox.Clear();
                 newDTW_TextBox.Text = "(" + (int)DTWx + "," + (int)DTWy + ")";
             }
@@ -386,24 +365,197 @@ namespace OnlineImageRecognition
             }
         }
 
+        //disposed authroization average button 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            BComp_AverageDTW ave = new BComp_AverageDTW(selected_filename);
-           int[,]aveDTW= ave.AverageDTW(1,20);
-            int[,] aveDTW_Other = ave.AverageDTW(21,40);
-            AverageDTWLabel.Text = "AverageDTW:"+aveDTW[0, 0] + "," + aveDTW[0, 1];
-            AverageDTW_FrogedLabel.Text = "AverageDTW_Froged:" + aveDTW_Other[0, 0] + "," + aveDTW_Other[0, 1];
+            BComp_AverageDTW ave = new BComp_AverageDTW(selected_filename,selected_filename);
+            BComp_AverageDTW ave_Comp = new BComp_AverageDTW(selected_filename_other, selected_filename);
+            int[,] aveDTW = ave.AverageDTW(1, 10);
+            int[,] aveDTW_Other = ave_Comp.AverageDTW(1, 20);
+            String AverageDTWLabel_Text = "AverageDTW:" + aveDTW[0, 0] + "," + aveDTW[0, 1];
+            String AverageDTW_FrogedLabel_Text = "AverageDTW_Froged:" + aveDTW_Other[0, 0] + "," + aveDTW_Other[0, 1];
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            BComp_Authorization auo = new BComp_Authorization(selected_filename);
-            AuthorizationLabel.Text = "Authorization:"+ auo.Autho();
+            BComp_Authorization auo = new BComp_Authorization(selected_filename_other,selected_filename);
+            AuthorizationLabel.Text = "Authorization:" + auo.Autho();
         }
 
         private void AverageDTWLabel_Click(object sender, EventArgs e)
         {
+        }
 
+
+        private void readFile(){
+
+            if (selected_filename == null)
+            {
+                string message = "You should choose first!";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(this, message, "Signature1_read", buttons);
+            }
+            else
+            {
+                //entity read
+                /**/
+                entity = new BussinessEntity(@"././././Task2/" + selected_filename);
+                if (entity != null)
+                {
+                    entity.ToFloatArray();
+                    fx = entity.PointX;
+                    fy = entity.PointY;
+                    x = entity.PointX_Int;
+                    y = entity.PointY_Int;
+
+                    string message = "Read '" + selected_filename + "' successful!!!";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(this, message, "Signature1_read", buttons);
+                }
+
+                /*  ///sort!!!!!!Int
+                 Sorter.Save(null, null, x, y);
+                 sorter.SortInt( x,  y);
+                 Sorter.Save( null, null, x, y);*/
+            }
+        }
+
+        private void readFile_Other()
+        {
+
+            if (selected_filename_other == null)
+            {
+                string message = "You should choose first!";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(this, message, "Signature2_read", buttons);
+            }
+            else
+            {
+                entity_other = new BussinessEntity(@"././././Task2/" + selected_filename_other);
+                if (entity_other != null)
+                {
+                    entity_other.ToFloatArray();
+                    fx_other = entity_other.PointX;
+                    fy_other = entity_other.PointY;
+                    x_other = entity_other.PointX_Int;
+                    y_other = entity_other.PointY_Int;
+
+                    string message = "Read '" + selected_filename_other + "' successful!!!";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(this, message, "Signature2_read", buttons);
+                }
+            }
+        }
+
+        String selectedUser = null;
+        String selectedUser_Other = null;
+        String selectedSignature = null;
+        String selectedSignature_Other = null;
+        String readFileType = ".TXT";
+        private void User_1_CBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Object selectedItem = User_1_CBox.SelectedItem;
+            String selected = selectedItem.ToString();
+
+            selectedUser = selected;
+            if (selectedUser!=null && selectedSignature!=null)
+            {
+                //read
+                if (selectedUser == selected)
+                {
+                    selected_filename = selectedUser + selectedSignature + readFileType;
+                    readFile();
+                }
+            }
+        }
+
+        private void User_2_CBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Object selectedItem = User_2_CBox.SelectedItem;
+            String selected = selectedItem.ToString();
+
+            selectedUser_Other = selected;
+            if (selectedUser_Other != null && selectedSignature_Other != null)
+            {
+                //read
+                if (selectedUser_Other == selected)
+                {
+                    selected_filename_other = selectedUser_Other + selectedSignature_Other + readFileType;
+                    readFile_Other();
+                }
+            }
+        }
+
+        private void Signature_1_CBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Object selectedItem = Signature_1_CBox.SelectedItem;
+            String selected = selectedItem.ToString();
+
+            selectedSignature = selected;
+            if (selectedSignature != null && selectedUser != null)
+            {
+                //read
+                if (selectedSignature == selected)
+                {
+                    selected_filename = selectedUser + selectedSignature + readFileType;
+                    readFile();
+                }
+            }
+
+        }
+
+        private void Signature_2_CBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            Object selectedItem = Signature_2_CBox.SelectedItem;
+            String selected = selectedItem.ToString();
+
+            selectedSignature_Other = selected;
+            if (selectedSignature_Other != null && selectedUser_Other != null)
+            {
+                //read
+                if (selectedSignature_Other == selected)
+                {
+                    selected_filename_other = selectedUser_Other + selectedSignature_Other + readFileType;
+                    readFile_Other();
+                }
+            }
+        }
+
+        private void Signature_2_Lb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PerformanceBT_Click(object sender, EventArgs e)
+        {
+            BComp_SystemPerformance performance = new BComp_SystemPerformance(performanceSelectedUser,other_performanceSelectedUser);
+            double[] index = performance.performaceTestCalculation();
+            XpointPerformanceLabel.Text = "XpointPerformance: "+index[0].ToString();
+            YpointPerformanceLabel.Text = "YpointPerformance: " + index[1].ToString();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+        int performanceSelectedUser = 1;
+        int other_performanceSelectedUser = 1;
+        private void PerformanceSelectedUser1_CBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Object selectedItem = PerformanceSelectedUser1_CBox.SelectedItem;
+            performanceSelectedUser = int.Parse(selectedItem.ToString().Split('U')[1]);
+        }
+
+        private void PerformanceSelectedUser2_CBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Object selectedItem = PerformanceSelectedUser2_CBox.SelectedItem;
+            other_performanceSelectedUser = int.Parse(selectedItem.ToString().Split('U')[1]);
         }
     }
 }

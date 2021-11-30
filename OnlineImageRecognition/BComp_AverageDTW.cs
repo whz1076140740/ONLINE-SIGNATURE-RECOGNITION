@@ -10,17 +10,18 @@ namespace OnlineImageRecognition
         private const String DefaultPath = @"././././Task2/";
         private const String ReadType = @".TXT";
         private String SelectFileName;
+        private String ReferenceFileName;
         private int userID;
         private int[,] DTW;
         
-        public BComp_AverageDTW(String FName)
+        public BComp_AverageDTW(String FName,String ReferencedFName)
         {
             SelectFileName = FName;
-            userID = int.Parse(SelectFileName.Split('S')[0].Split('U')[1]);
+
+            ReferenceFileName = ReferencedFName;
+            userID = int.Parse(ReferenceFileName.Split('S')[0].Split('U')[1]);
+
         }
-
-
-
 
         public int[,] AverageDTW(int startSin, int endSin)
         {
@@ -31,7 +32,7 @@ namespace OnlineImageRecognition
         }
 
         
-        public int[,] Read(int startSin, int endSin)
+        private int[,] Read(int startSin, int endSin)
         {
             DBReader selectedFile = new DBReader();
             selectedFile.Read(DefaultPath + SelectFileName);
@@ -52,15 +53,18 @@ namespace OnlineImageRecognition
             {
                 if (Averages[j] == null || Averages[j].pointX ==null) break;
 
-                int[,] tempDTW = BComp_DTW.DTWDistance(selectedFile.pointX, selectedFile.pointY,
-                    Averages[j].pointX, Averages[j].pointY);
+                int[,] tempDTW = BComp_DTW.DTWDistance(Averages[j].pointX, Averages[j].pointY,
+                    selectedFile.pointX, selectedFile.pointY);
                 DTW[j, 0] = tempDTW[0, 0];
                 DTW[j, 1] = tempDTW[0, 1];
 
                 DTWaverage[0, 0] += DTW[j, 0];
                 DTWaverage[0, 1] += DTW[j, 1];
                
+                /*
+                //test
                 Console.WriteLine("DTW"+j+":"+ DTW[j, 0] +","+ DTW[j, 1]);
+                */
             }
             return DTWaverage;
         }

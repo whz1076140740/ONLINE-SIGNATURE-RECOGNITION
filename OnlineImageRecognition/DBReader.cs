@@ -74,8 +74,12 @@ namespace OnlineImageRecognition
             }
             using (StreamReader fs = File.OpenText(FileName))
             {
-
+                /*
+                //test
                 Console.WriteLine(FileName+"Read success!");
+                */
+
+
                 length = int.Parse(fs.ReadLine());
                 imageBufferX = new int[length];
                 imageBufferY = new int[length];
