@@ -1,6 +1,6 @@
 ﻿namespace OnlineImageRecognition
 {
-    partial class Form1
+    partial class ViewWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -55,11 +55,14 @@
             this.PerformanceSelectedUser2_CBox = new System.Windows.Forms.ComboBox();
             this.vPerformanceSelectedUser1_Label = new System.Windows.Forms.Label();
             this.vPerformanceSelectedUser2_Label = new System.Windows.Forms.Label();
+            this.VerifyBT = new System.Windows.Forms.Button();
+            this.VerifySignatureLB = new System.Windows.Forms.Label();
+            this.VerifyResultLB = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // DTW
             // 
-            this.DTW.Location = new System.Drawing.Point(430, 13);
+            this.DTW.Location = new System.Drawing.Point(217, 12);
             this.DTW.Margin = new System.Windows.Forms.Padding(4);
             this.DTW.Name = "DTW";
             this.DTW.Size = new System.Drawing.Size(74, 31);
@@ -70,7 +73,7 @@
             // 
             // DrawBt_1
             // 
-            this.DrawBt_1.Location = new System.Drawing.Point(325, 45);
+            this.DrawBt_1.Location = new System.Drawing.Point(13, 193);
             this.DrawBt_1.Margin = new System.Windows.Forms.Padding(4);
             this.DrawBt_1.Name = "DrawBt_1";
             this.DrawBt_1.Size = new System.Drawing.Size(68, 26);
@@ -87,7 +90,7 @@
             // 
             // DTW_TBox
             // 
-            this.DTW_TBox.Location = new System.Drawing.Point(430, 71);
+            this.DTW_TBox.Location = new System.Drawing.Point(217, 53);
             this.DTW_TBox.Margin = new System.Windows.Forms.Padding(4);
             this.DTW_TBox.Multiline = true;
             this.DTW_TBox.Name = "DTW_TBox";
@@ -97,7 +100,7 @@
             // 
             // DrawBt_2
             // 
-            this.DrawBt_2.Location = new System.Drawing.Point(325, 164);
+            this.DrawBt_2.Location = new System.Drawing.Point(115, 193);
             this.DrawBt_2.Margin = new System.Windows.Forms.Padding(4);
             this.DrawBt_2.Name = "DrawBt_2";
             this.DrawBt_2.Size = new System.Drawing.Size(68, 26);
@@ -108,7 +111,7 @@
             // 
             // shiftBT
             // 
-            this.shiftBT.Location = new System.Drawing.Point(430, 162);
+            this.shiftBT.Location = new System.Drawing.Point(364, 59);
             this.shiftBT.Name = "shiftBT";
             this.shiftBT.Size = new System.Drawing.Size(65, 31);
             this.shiftBT.TabIndex = 15;
@@ -118,7 +121,7 @@
             // 
             // scaleBT
             // 
-            this.scaleBT.Location = new System.Drawing.Point(430, 117);
+            this.scaleBT.Location = new System.Drawing.Point(364, 13);
             this.scaleBT.Name = "scaleBT";
             this.scaleBT.Size = new System.Drawing.Size(65, 31);
             this.scaleBT.TabIndex = 16;
@@ -128,7 +131,7 @@
             // 
             // newDTWBT
             // 
-            this.newDTWBT.Location = new System.Drawing.Point(571, 12);
+            this.newDTWBT.Location = new System.Drawing.Point(217, 137);
             this.newDTWBT.Name = "newDTWBT";
             this.newDTWBT.Size = new System.Drawing.Size(74, 31);
             this.newDTWBT.TabIndex = 17;
@@ -138,7 +141,7 @@
             // 
             // newDTW_TextBox
             // 
-            this.newDTW_TextBox.Location = new System.Drawing.Point(571, 71);
+            this.newDTW_TextBox.Location = new System.Drawing.Point(217, 182);
             this.newDTW_TextBox.Multiline = true;
             this.newDTW_TextBox.Name = "newDTW_TextBox";
             this.newDTW_TextBox.Size = new System.Drawing.Size(115, 37);
@@ -146,7 +149,7 @@
             // 
             // AuthorizationBT
             // 
-            this.AuthorizationBT.Location = new System.Drawing.Point(570, 132);
+            this.AuthorizationBT.Location = new System.Drawing.Point(364, 137);
             this.AuthorizationBT.Name = "AuthorizationBT";
             this.AuthorizationBT.Size = new System.Drawing.Size(98, 31);
             this.AuthorizationBT.TabIndex = 20;
@@ -157,7 +160,7 @@
             // AuthorizationLabel
             // 
             this.AuthorizationLabel.AutoSize = true;
-            this.AuthorizationLabel.Location = new System.Drawing.Point(568, 178);
+            this.AuthorizationLabel.Location = new System.Drawing.Point(361, 193);
             this.AuthorizationLabel.Name = "AuthorizationLabel";
             this.AuthorizationLabel.Size = new System.Drawing.Size(119, 15);
             this.AuthorizationLabel.TabIndex = 25;
@@ -166,7 +169,7 @@
             // User_1_CBox
             // 
             this.User_1_CBox.FormattingEnabled = true;
-            this.User_1_CBox.Location = new System.Drawing.Point(67, 48);
+            this.User_1_CBox.Location = new System.Drawing.Point(15, 45);
             this.User_1_CBox.Name = "User_1_CBox";
             this.User_1_CBox.Size = new System.Drawing.Size(82, 23);
             this.User_1_CBox.TabIndex = 26;
@@ -175,7 +178,7 @@
             // User_2_CBox
             // 
             this.User_2_CBox.FormattingEnabled = true;
-            this.User_2_CBox.Location = new System.Drawing.Point(67, 162);
+            this.User_2_CBox.Location = new System.Drawing.Point(15, 137);
             this.User_2_CBox.Name = "User_2_CBox";
             this.User_2_CBox.Size = new System.Drawing.Size(82, 23);
             this.User_2_CBox.TabIndex = 27;
@@ -184,7 +187,7 @@
             // Signature_1_CBox
             // 
             this.Signature_1_CBox.FormattingEnabled = true;
-            this.Signature_1_CBox.Location = new System.Drawing.Point(183, 48);
+            this.Signature_1_CBox.Location = new System.Drawing.Point(115, 45);
             this.Signature_1_CBox.Name = "Signature_1_CBox";
             this.Signature_1_CBox.Size = new System.Drawing.Size(82, 23);
             this.Signature_1_CBox.TabIndex = 28;
@@ -193,7 +196,7 @@
             // Signature_2_CBox
             // 
             this.Signature_2_CBox.FormattingEnabled = true;
-            this.Signature_2_CBox.Location = new System.Drawing.Point(182, 162);
+            this.Signature_2_CBox.Location = new System.Drawing.Point(114, 137);
             this.Signature_2_CBox.Name = "Signature_2_CBox";
             this.Signature_2_CBox.Size = new System.Drawing.Size(83, 23);
             this.Signature_2_CBox.TabIndex = 29;
@@ -202,7 +205,7 @@
             // User_1_Lb
             // 
             this.User_1_Lb.AutoSize = true;
-            this.User_1_Lb.Location = new System.Drawing.Point(64, 9);
+            this.User_1_Lb.Location = new System.Drawing.Point(12, 9);
             this.User_1_Lb.Name = "User_1_Lb";
             this.User_1_Lb.Size = new System.Drawing.Size(55, 15);
             this.User_1_Lb.TabIndex = 30;
@@ -211,7 +214,7 @@
             // User_2_Lb
             // 
             this.User_2_Lb.AutoSize = true;
-            this.User_2_Lb.Location = new System.Drawing.Point(64, 117);
+            this.User_2_Lb.Location = new System.Drawing.Point(12, 93);
             this.User_2_Lb.Name = "User_2_Lb";
             this.User_2_Lb.Size = new System.Drawing.Size(55, 15);
             this.User_2_Lb.TabIndex = 31;
@@ -220,7 +223,7 @@
             // Signature_1_Lb
             // 
             this.Signature_1_Lb.AutoSize = true;
-            this.Signature_1_Lb.Location = new System.Drawing.Point(180, 9);
+            this.Signature_1_Lb.Location = new System.Drawing.Point(112, 9);
             this.Signature_1_Lb.Name = "Signature_1_Lb";
             this.Signature_1_Lb.Size = new System.Drawing.Size(95, 15);
             this.Signature_1_Lb.TabIndex = 32;
@@ -229,7 +232,7 @@
             // Signature_2_Lb
             // 
             this.Signature_2_Lb.AutoSize = true;
-            this.Signature_2_Lb.Location = new System.Drawing.Point(180, 117);
+            this.Signature_2_Lb.Location = new System.Drawing.Point(112, 93);
             this.Signature_2_Lb.Name = "Signature_2_Lb";
             this.Signature_2_Lb.Size = new System.Drawing.Size(95, 15);
             this.Signature_2_Lb.TabIndex = 33;
@@ -238,7 +241,7 @@
             // 
             // PerformanceBT
             // 
-            this.PerformanceBT.Location = new System.Drawing.Point(742, 14);
+            this.PerformanceBT.Location = new System.Drawing.Point(507, 13);
             this.PerformanceBT.Name = "PerformanceBT";
             this.PerformanceBT.Size = new System.Drawing.Size(105, 30);
             this.PerformanceBT.TabIndex = 34;
@@ -249,7 +252,7 @@
             // XpointPerformanceLabel
             // 
             this.XpointPerformanceLabel.AutoSize = true;
-            this.XpointPerformanceLabel.Location = new System.Drawing.Point(739, 125);
+            this.XpointPerformanceLabel.Location = new System.Drawing.Point(501, 137);
             this.XpointPerformanceLabel.Name = "XpointPerformanceLabel";
             this.XpointPerformanceLabel.Size = new System.Drawing.Size(151, 15);
             this.XpointPerformanceLabel.TabIndex = 35;
@@ -259,7 +262,7 @@
             // YpointPerformanceLabel
             // 
             this.YpointPerformanceLabel.AutoSize = true;
-            this.YpointPerformanceLabel.Location = new System.Drawing.Point(739, 140);
+            this.YpointPerformanceLabel.Location = new System.Drawing.Point(501, 153);
             this.YpointPerformanceLabel.Name = "YpointPerformanceLabel";
             this.YpointPerformanceLabel.Size = new System.Drawing.Size(151, 15);
             this.YpointPerformanceLabel.TabIndex = 36;
@@ -268,7 +271,7 @@
             // PerformanceSelectedUser1_CBox
             // 
             this.PerformanceSelectedUser1_CBox.FormattingEnabled = true;
-            this.PerformanceSelectedUser1_CBox.Location = new System.Drawing.Point(742, 85);
+            this.PerformanceSelectedUser1_CBox.Location = new System.Drawing.Point(504, 90);
             this.PerformanceSelectedUser1_CBox.Name = "PerformanceSelectedUser1_CBox";
             this.PerformanceSelectedUser1_CBox.Size = new System.Drawing.Size(56, 23);
             this.PerformanceSelectedUser1_CBox.TabIndex = 37;
@@ -277,7 +280,7 @@
             // PerformanceSelectedUser2_CBox
             // 
             this.PerformanceSelectedUser2_CBox.FormattingEnabled = true;
-            this.PerformanceSelectedUser2_CBox.Location = new System.Drawing.Point(888, 85);
+            this.PerformanceSelectedUser2_CBox.Location = new System.Drawing.Point(621, 90);
             this.PerformanceSelectedUser2_CBox.Name = "PerformanceSelectedUser2_CBox";
             this.PerformanceSelectedUser2_CBox.Size = new System.Drawing.Size(56, 23);
             this.PerformanceSelectedUser2_CBox.TabIndex = 38;
@@ -286,7 +289,7 @@
             // vPerformanceSelectedUser1_Label
             // 
             this.vPerformanceSelectedUser1_Label.AutoSize = true;
-            this.vPerformanceSelectedUser1_Label.Location = new System.Drawing.Point(739, 56);
+            this.vPerformanceSelectedUser1_Label.Location = new System.Drawing.Point(501, 67);
             this.vPerformanceSelectedUser1_Label.Name = "vPerformanceSelectedUser1_Label";
             this.vPerformanceSelectedUser1_Label.Size = new System.Drawing.Size(111, 15);
             this.vPerformanceSelectedUser1_Label.TabIndex = 39;
@@ -295,18 +298,49 @@
             // vPerformanceSelectedUser2_Label
             // 
             this.vPerformanceSelectedUser2_Label.AutoSize = true;
-            this.vPerformanceSelectedUser2_Label.Location = new System.Drawing.Point(885, 56);
+            this.vPerformanceSelectedUser2_Label.Location = new System.Drawing.Point(618, 67);
             this.vPerformanceSelectedUser2_Label.Name = "vPerformanceSelectedUser2_Label";
             this.vPerformanceSelectedUser2_Label.Size = new System.Drawing.Size(111, 15);
             this.vPerformanceSelectedUser2_Label.TabIndex = 40;
             this.vPerformanceSelectedUser2_Label.Text = "ComparedUser:";
             this.vPerformanceSelectedUser2_Label.Click += new System.EventHandler(this.label2_Click);
             // 
-            // Form1
+            // VerifyBT
+            // 
+            this.VerifyBT.Location = new System.Drawing.Point(727, 12);
+            this.VerifyBT.Name = "VerifyBT";
+            this.VerifyBT.Size = new System.Drawing.Size(75, 30);
+            this.VerifyBT.TabIndex = 41;
+            this.VerifyBT.Text = "Verify";
+            this.VerifyBT.UseVisualStyleBackColor = true;
+            this.VerifyBT.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // VerifySignatureLB
+            // 
+            this.VerifySignatureLB.AutoSize = true;
+            this.VerifySignatureLB.Location = new System.Drawing.Point(724, 56);
+            this.VerifySignatureLB.Name = "VerifySignatureLB";
+            this.VerifySignatureLB.Size = new System.Drawing.Size(87, 15);
+            this.VerifySignatureLB.TabIndex = 42;
+            this.VerifySignatureLB.Text = "Signature:";
+            // 
+            // VerifyResultLB
+            // 
+            this.VerifyResultLB.AutoSize = true;
+            this.VerifyResultLB.Location = new System.Drawing.Point(692, 93);
+            this.VerifyResultLB.Name = "VerifyResultLB";
+            this.VerifyResultLB.Size = new System.Drawing.Size(119, 15);
+            this.VerifyResultLB.TabIndex = 43;
+            this.VerifyResultLB.Text = "Verify_Result:";
+            // 
+            // ViewWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1019, 228);
+            this.ClientSize = new System.Drawing.Size(1040, 250);
+            this.Controls.Add(this.VerifyResultLB);
+            this.Controls.Add(this.VerifySignatureLB);
+            this.Controls.Add(this.VerifyBT);
             this.Controls.Add(this.vPerformanceSelectedUser2_Label);
             this.Controls.Add(this.vPerformanceSelectedUser1_Label);
             this.Controls.Add(this.PerformanceSelectedUser2_CBox);
@@ -333,8 +367,8 @@
             this.Controls.Add(this.DTW);
             this.Controls.Add(this.DTW_TBox);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "ViewWindow";
+            this.Text = "SignatureVerify";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -368,6 +402,9 @@
         private System.Windows.Forms.ComboBox PerformanceSelectedUser2_CBox;
         private System.Windows.Forms.Label vPerformanceSelectedUser1_Label;
         private System.Windows.Forms.Label vPerformanceSelectedUser2_Label;
+        private System.Windows.Forms.Button VerifyBT;
+        private System.Windows.Forms.Label VerifySignatureLB;
+        private System.Windows.Forms.Label VerifyResultLB;
     }
 }
 

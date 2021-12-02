@@ -31,17 +31,25 @@ public class BComp_DTW
                     DTW[i, j] = cost +minimum(DTW[(i - 1), j],    // insertion
                                                 DTW[i, (j - 1)],    // deletion
                                                 DTW[(i - 1), (j - 1)]);    // match 
-                    Console.Write((int)DTW[i, j]+" ");
+                    /*
+                    //test-print matrix
+                    Console.Write((int)DTW[i, j]+" ");*/
                 }
-                Console.WriteLine();
+
+                /*
+                //test-print matrix
+                Console.WriteLine(); */
             }
             float_DTW = DTW[n - 1, m - 1];
 
+            /*
+            //test-print matrix
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine();*/
+
             return float_DTW;
         }
         private float minimum(float insertion, float deletion, float match)
@@ -96,3 +104,4 @@ public class BComp_DTW
         }
     }
 }
+ 

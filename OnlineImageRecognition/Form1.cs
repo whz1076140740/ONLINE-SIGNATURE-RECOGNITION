@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace OnlineImageRecognition
 {
-    public partial class Form1 : Form
+    public partial class ViewWindow : Form
     {
         //user defined sorter
         Sorter sorter = new Sorter();
@@ -36,7 +36,7 @@ namespace OnlineImageRecognition
         //scaled entity
         BussinessEntity_Scaled scalling;
         BussinessEntity_Scaled scalling_Other;
-        public Form1()
+        public ViewWindow()
         {
             InitializeComponent();
             //initailize User and signature combox
@@ -107,38 +107,6 @@ namespace OnlineImageRecognition
 
         }
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            //const int SHIFTX = 100;
-            //const int SHIFTY = 500;
-            //if (x !=null&&y !=null)
-            //{
-            //    using (Pen pen = new Pen(Color.FromArgb(150, Color.Blue), 2))
-            //    {
-            //       /* //this is use for check the X,Y coordinates direction
-            //            //this is extension along Y coordinate
-            //        e.Graphics.DrawRectangle(pen, 30 + 1, 30 + 1, 1, 1);
-            //        e.Graphics.DrawRectangle(pen, 30 + 1, 30 + 20, 1, 1);
-            //        e.Graphics.DrawRectangle(pen, 30 + 1, 30 + 30, 1, 1);
-            //        e.Graphics.DrawRectangle(pen, 30 + 1, 30 + 40, 1, 1);
-            //        e.Graphics.DrawRectangle(pen, 30 + 1, 30 + 50, 1, 1); 
-            //        //this is extension along X coordinate
-            //        e.Graphics.DrawRectangle(pen, 30 + 20, 30 + 1, 1, 1);
-            //        e.Graphics.DrawRectangle(pen, 30 + 30, 30 + 1, 1, 1);
-            //        e.Graphics.DrawRectangle(pen, 30 + 60, 30 + 60, 1, 1);
-            //        */
-            //        int i = 0;
-            //        while (i<x.Length)
-            //        {
-            //           // e.Graphics.DrawRectangle(pen, x[i] + 30 , y[i] + 30 , 1, 1);//rectangle  size in 1 pixel represent a point
-
-            //            //entity fraw
-            //            e.Graphics.DrawRectangle(pen, fx[i] + SHIFTX , - fy[i] + SHIFTY, 1, 1);//rectangle  size in 1 pixel represent a point
-            //            ++i;
-            //        }
-            //    }
-            //}
-        }
         //drawBt 1 draw the signature 1 in a new window
         private void DrawButton_Click(object sender, EventArgs e)
         {
@@ -348,7 +316,7 @@ namespace OnlineImageRecognition
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (scalling.PointX != null & scalling.PointY != null & scalling_Other.PointX != null & scalling_Other.PointY != null)
+            if (scalling!=null)
             {
                 BComp_DTW dtw_Calculator = new BComp_DTW();
                 //int[,] DTW = dtw_Calculator.DTWDistance(x, y, x_other, y_other);
@@ -359,7 +327,7 @@ namespace OnlineImageRecognition
             }
             else
             {
-                string message = "You should Read before DTW!";
+                string message = "You should Scale before NewDTW!";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBox.Show(this, message, "DTW_calculator", buttons);
             }
@@ -556,6 +524,22 @@ namespace OnlineImageRecognition
         {
             Object selectedItem = PerformanceSelectedUser2_CBox.SelectedItem;
             other_performanceSelectedUser = int.Parse(selectedItem.ToString().Split('U')[1]);
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            if(selected_filename != null)
+            {
+                VerifySignatureLB.Text = "Signature:" + selected_filename;
+                BComp_Verifier verifier = new BComp_Verifier(selected_filename);
+                verifier.verify();
+
+                VerifyResultLB.Text = "Verify_Result:"+ verifier.XYprintResult;
+            }
+            else
+            {
+                VerifySignatureLB.Text = "Signature:" + " Signature not selected!";
+            }
         }
     }
 }
